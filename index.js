@@ -1,50 +1,37 @@
 const cats = ['Milo', 'Otis', 'Garfield'];
 
-function destructivelyAppendCat(){
-    cats.push('Ralph');
+function destructivelyAppendCat(name){
+    cats.push(name);
 }
 
-function destructivelyPrependCat(){
-    cats.unshift('Bob');
+function destructivelyPrependCat(name){
+    cats.unshift(name);
 }
 
 
-function destructivelyRemoveLastCat(){
-    cats.pop();
+function destructivelyRemoveLastCat(name){
+    cats.pop(name);
 }
 
-function destructivelyRemoveFirstCat(){
-    cats.shift();
+function destructivelyRemoveFirstCat(name){
+    cats.shift(name);
 }
 
-function appendCat(Broom){
+function appendCat(name){
     const newCats = [...cats];
-    newCats.push('Broom');
-    return newCats
+    newCats.push(name);
+    return newCats;
 }
 
-function prependCat(Arnold){
-    const newCatNames = [...cats];
-    newCatNames.unshift('Arnold');
-    return newCatNames
+function prependCat(name){
+    return [name, ...cats];
 }
-// function prependCat(name){
-//     return [name,... cats]
-// }
 
 function removeLastCat(){
-    const newCats = [...cats];
-    newCats.pop(2);
-    return newCats
+    return cats.slice(0, cats.length-1);
 }
 
 
 function removeFirstCat(){
-    const firstCatRemoved = [... cats];
-    firstCatRemoved.shift(0);
-    return firstCatRemoved
+return cats.slice(1);
 }
-
-// function removeFirstCat(){
-//     return cats.slice(1)
-// }
